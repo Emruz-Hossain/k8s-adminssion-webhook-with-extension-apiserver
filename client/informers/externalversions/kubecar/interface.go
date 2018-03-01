@@ -19,8 +19,8 @@ limitations under the License.
 package kubecar
 
 import (
-	internalinterfaces "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/kubecar/v1alpha1"
+	internalinterfaces "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/kubecar/v1alpha1"
 )
 
 // Interface provides access to each of this group's versions.

@@ -19,9 +19,9 @@ limitations under the License.
 package externalversions
 
 import (
-	versioned "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
-	internalinterfaces "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
-	kubecar "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/kubecar"
+	versioned "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
+	internalinterfaces "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
+	kubecar "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/kubecar"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

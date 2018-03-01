@@ -1,7 +1,7 @@
 package v1alpha1
 
 import (
-	"k8s-admission-webhook-with-extension-apiserver/apis/kubecar"
+	"github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/apis/kubecar"
 	metav1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/runtime/schema"

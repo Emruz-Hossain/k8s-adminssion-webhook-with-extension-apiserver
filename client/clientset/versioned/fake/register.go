@@ -16,7 +16,7 @@ limitations under the License.
 package fake
 
 import (
-	kubecarv1alpha1 "k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
+	kubecarv1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	schema "k8s.io/apimachinery/pkg/runtime/schema"

@@ -16,9 +16,9 @@ limitations under the License.
 package fake
 
 import (
-	clientset "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
-	kubecarv1alpha1 "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
-	fakekubecarv1alpha1 "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1/fake"
+	clientset "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
+	kubecarv1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
+	fakekubecarv1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1/fake"
 	"k8s.io/apimachinery/pkg/runtime"
 	"k8s.io/apimachinery/pkg/watch"
 	"k8s.io/client-go/discovery"

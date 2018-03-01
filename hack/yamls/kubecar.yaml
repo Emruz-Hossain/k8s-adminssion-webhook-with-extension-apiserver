@@ -1,0 +1,8 @@
+apiVersion: "kubecar.emruz.com/v1alpha1"
+kind: Kubecar
+metadata:
+  name: kubecar1
+spec:
+  accident_count: 4
+  traffic_rule_violation_count: 5
+  driving_skill_point: 100

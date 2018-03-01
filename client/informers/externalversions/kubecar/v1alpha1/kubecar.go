@@ -19,10 +19,10 @@ limitations under the License.
 package v1alpha1
 
 import (
-	kubecar_v1alpha1 "k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
-	versioned "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
-	internalinterfaces "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
-	v1alpha1 "k8s-admission-webhook-with-extension-apiserver/client/listers/kubecar/v1alpha1"
+	kubecar_v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
+	versioned "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
+	internalinterfaces "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
+	v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/listers/kubecar/v1alpha1"
 	v1 "k8s.io/apimachinery/pkg/apis/meta/v1"
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"

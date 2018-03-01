@@ -16,7 +16,7 @@ limitations under the License.
 package fake
 
 import (
-	v1alpha1 "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
+	v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
 	rest "k8s.io/client-go/rest"
 	testing "k8s.io/client-go/testing"
 )

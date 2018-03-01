@@ -1,0 +1,49 @@
+apiVersion: apps/v1beta1
+kind: Deployment
+metadata:
+  name: kubecar-operator
+  namespace: default
+  labels:
+    app: kbc
+  initializers:
+    pending: []
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: kbc
+  template:
+    metadata:
+      labels:
+        app: kbc
+    spec:
+      containers:
+      - name: kubecar-operator
+        image: emruzhossain/kbc
+        imagePullPolicy: IfNotPresent
+        ports:
+        - containerPort: 8443
+#        volumeMounts:
+#        - mountPath: /var/serving-cert
+#          name: serving-cert
+#      volumes:
+#      - name: serving-cert
+#        secret:
+#          defaultMode: 420
+#          secretName: foo-apiserver-cert
+
+---
+apiVersion: v1
+kind: Service
+metadata:
+  name: kubecar-operator-svc
+  namespace: default
+  labels:
+    app: kbc
+spec:
+  ports:
+  - name: admission
+    port: 443
+    targetPort: 8443
+  selector:
+    app: kbc

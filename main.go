@@ -1,12 +1,13 @@
-package k8s_admission_webhook_with_extension_apiserver
+package main
 
 import (
 	//"k8s.io/code-generator"
 	"flag"
-	"k8s-admission-webhook-with-extension-apiserver/controller"
 
 	"github.com/appscode/go/log"
-	clientset "k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
+	"github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/controller"
+
+	clientset "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
 	"k8s.io/client-go/kubernetes"
 	"k8s.io/client-go/tools/clientcmd"
 )
@@ -40,13 +41,13 @@ func main() {
 	if err != nil {
 		log.Fatalln("Can't build kubecar client. Reason: ", err.Error())
 	}
-
-	kubeController := controller.NewKubecarController(kubeClient,kubecarClient,)
+	options := controller.NewOptions()
+	kubecarController := controller.NewKubecarController(kubeClient, kubecarClient, *options)
 
 	go func() {
-		log.Infoln("Starting controller.....")
-		if err:=controller.Run(stopCh); err!=nil{
-			log.Fatal("Failed to start controller. Reason: ",err)
-		}
+		log.Info("Starting controller....")
+		kubecarController.Run(stopCh)
 	}()
+
+	select {}
 }

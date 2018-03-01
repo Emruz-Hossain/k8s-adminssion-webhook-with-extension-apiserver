@@ -2,8 +2,9 @@ package util
 
 import (
 	"encoding/json"
-	kc_v1alpha1 "k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
-	"k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
+
+	kc_v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
+	"github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned/typed/kubecar/v1alpha1"
 
 	"github.com/appscode/kutil"
 	"k8s.io/apimachinery/pkg/types"

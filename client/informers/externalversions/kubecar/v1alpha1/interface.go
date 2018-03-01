@@ -19,7 +19,7 @@ limitations under the License.
 package v1alpha1
 
 import (
-	internalinterfaces "k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
+	internalinterfaces "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
 )
 
 // Interface provides access to all the informers in this group version.
