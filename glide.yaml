@@ -1,6 +1,5 @@
 package: k8s-admission-webhook-with-extension-apiserver
 import:
-- package: k8s-adminssion-webhook-with-extension-apiserver/apis/kubecar
 - package: k8s.io/apimachinery
   subpackages:
   - pkg/apis/meta/v1
