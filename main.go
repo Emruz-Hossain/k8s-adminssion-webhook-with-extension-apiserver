@@ -3,8 +3,10 @@ package main
 import (
 	//"k8s.io/code-generator"
 	"flag"
+	"fmt"
 
 	"github.com/appscode/go/log"
+	"github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/admission"
 	"github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/controller"
 
 	clientset "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
@@ -45,8 +47,18 @@ func main() {
 	kubecarController := controller.NewKubecarController(kubeClient, kubecarClient, *options)
 
 	go func() {
-		log.Info("Starting controller....")
+		fmt.Println("Starting controller....")
 		kubecarController.Run(stopCh)
+	}()
+
+	// run api server
+	go func() {
+		fmt.Println("Starting api server ......")
+		err := admission.Run(stopCh, kubecarClient)
+		if err != nil {
+			log.Fatalln(err)
+		}
+
 	}()
 
 	select {}

@@ -1,0 +1,15 @@
+apiVersion: apiregistration.k8s.io/v1beta1
+kind: APIService
+metadata:
+  name: v1alpha1.admission.kubecar.emruz.com
+  labels:
+    app: kbc
+spec:
+  caBundle: ${SERVICE_SERVING_CERT_CA}
+  group: admission.kubecar.emruz.com
+  groupPriorityMinimum: 1000
+  versionPriority: 15
+  service:
+    name: kubecar-operator
+    namespace: default
+  version: v1alpha1

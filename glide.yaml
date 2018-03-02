@@ -1,7 +1,0 @@
-package: github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver
-import:
-- package: github.com/appscode/kutil
-- package: k8s.io/apimachinery
-  subpackages:
-  - pkg/util/jsonmergepatch
-- package: k8s.io/code-generator

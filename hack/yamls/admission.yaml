@@ -1,0 +1,25 @@
+apiVersion: admissionregistration.k8s.io/v1beta1
+kind: ValidatingWebhookConfiguration
+metadata:
+  name: validation.kubecar.emruz.com
+webhooks:
+- name: validation.kubecar.emruz.com
+  clientConfig:
+    service:
+      namespace: default
+      name: kubernetes
+      path: /apis/admission.kubecar.emruz.com/v1alpha1/validations
+    caBundle: ${KUBE_CA}
+  rules:
+  - operations:
+    - UPDATE
+    - DELETE
+    - CREATE
+    apiGroups:
+    - kubecar.emruz.com
+    apiVersions:
+    - "*"
+    resources:
+    - "*"
+  failurePolicy: Fail
+---

@@ -19,6 +19,8 @@ limitations under the License.
 package v1alpha1
 
 import (
+	time "time"
+
 	kubecar_v1alpha1 "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/apis/kubecar/v1alpha1"
 	versioned "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/clientset/versioned"
 	internalinterfaces "github.com/emruz-hossain/k8s-admission-webhook-with-extension-apiserver/client/informers/externalversions/internalinterfaces"
@@ -27,7 +29,6 @@ import (
 	runtime "k8s.io/apimachinery/pkg/runtime"
 	watch "k8s.io/apimachinery/pkg/watch"
 	cache "k8s.io/client-go/tools/cache"
-	time "time"
 )
 
 // KubecarInformer provides access to a shared informer and lister for

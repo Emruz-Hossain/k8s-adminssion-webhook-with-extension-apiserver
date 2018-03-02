@@ -15,14 +15,16 @@
 package compiler
 
 import (
+	"errors"
 	"fmt"
-	"gopkg.in/yaml.v2"
 	"io/ioutil"
 	"log"
 	"net/http"
 	"net/url"
 	"path/filepath"
 	"strings"
+
+	"gopkg.in/yaml.v2"
 )
 
 var fileCache map[string][]byte
@@ -53,10 +55,15 @@ func FetchFile(fileurl string) ([]byte, error) {
 		}
 		return bytes, nil
 	}
-	log.Printf("Fetching %s", fileurl)
+	if verboseReader {
+		log.Printf("Fetching %s", fileurl)
+	}
 	response, err := http.Get(fileurl)
 	if err != nil {
 		return nil, err
+	}
+	if response.StatusCode != 200 {
+		return nil, errors.New(fmt.Sprintf("Error downloading %s: %s", fileurl, response.Status))
 	}
 	defer response.Body.Close()
 	bytes, err = ioutil.ReadAll(response.Body)
